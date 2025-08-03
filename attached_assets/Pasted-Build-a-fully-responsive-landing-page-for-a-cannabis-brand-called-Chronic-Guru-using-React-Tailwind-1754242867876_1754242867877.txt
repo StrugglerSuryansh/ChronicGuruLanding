@@ -1,0 +1,82 @@
+Build a fully responsive landing page for a cannabis brand called Chronic Guru using React, Tailwind CSS, and Framer Motion.
+The page should be rich with scroll-based animations, hover microinteractions, and smooth page transitions.
+
+Functional & Visual Requirements:
+Use motion.div from framer-motion for animating components on scroll
+
+Apply react-intersection-observer or useInView hooks for scroll reveals
+
+Add hover effects, icon animations, and CTA button transitions
+
+Components must stack vertically on mobile and have animated transitions on desktop
+
+Landing Page Sections:
+1. Hero Section
+motion.div with fade-in from bottom
+
+Title: “Premium THCa Cannabis Delivered to Your Door”
+
+Subtitle: “Organic. Lab-Tested. Farm-Direct. No Medical Card Needed.”
+
+CTA Buttons: “Shop Now” & “Learn More” with hover scale + color pulse
+
+Background image with slow parallax scroll
+
+2. About Chronic Guru
+Side-by-side image/text layout with image fade-in from left and text from right
+
+Highlight: “Veteran-owned. Florida-grown. Federally legal.”
+
+Subtle cannabis leaf or smoke SVGs drifting across the section
+
+3. Product Carousel
+Horizontal scroll or slider with fade/slide-in product cards
+
+Use motion.div on each card with hover animation (scale, shadow, tilt)
+
+Product: Name, short desc, price, Buy button
+
+4. Why Choose Us
+5 animated icons with tooltips
+
+Animate on scroll using staggered motion.div
+
+Icons: Organic, Lab-Tested, Ships Nationwide, Legal, No Card Required
+
+5. Customer Testimonials
+Carousel or grid with fade/slide-in
+
+Animated star ratings and hover-reveal effects on quote cards
+
+6. Education CTA
+“New to THCa?” section with bounce-in CTA
+
+Button: “Explore Sativa University →” with underline animation on hover
+
+7. Newsletter Signup
+Animated input form with bounce/pulse button
+
+Text: “Stay in the know — Get cannabis news and deals straight to your inbox.”
+
+8. Footer
+Smooth slide-up footer with links, social icons (with hover pop), and legal disclaimer
+
+Tech Stack:
+React + Tailwind CSS
+
+Framer Motion for animations
+
+react-intersection-observer or useInView for scroll triggers
+
+Optional: react-scroll or smooth scroll behavior
+
+Design Style:
+Colors: Deep green, ivory white, warm gold accents
+
+Typography: Soft rounded sans-serif (e.g., Poppins or Inter)
+
+Layout: Grid/flex-based, generous padding, animated transitions
+
+Animations: Soft easing (easeInOut, spring), consistent animation delays
+
+Bonus: Add an optional smoke or vapor effect near the header using CSS or Canvas for visual depth.
