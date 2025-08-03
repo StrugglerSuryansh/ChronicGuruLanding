@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(45, 29%, 17%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(45, 29%, 17%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(45, 29%, 17%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(144, 50%, 22%);
+  --primary-foreground: hsl(60, 25%, 97%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(45, 29%, 17%);
+  --radius: 0.5rem;
+  
+  /* Cannabis Brand Colors */
+  --forest: hsl(144, 50%, 22%);
+  --sage: hsl(160, 34%, 42%);
+  --gold: hsl(45, 77%, 52%);
+  --ivory: hsl(60, 25%, 97%);
+  --charcoal: hsl(213, 27%, 25%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(144, 50%, 22%);
+  --primary-foreground: hsl(60, 25%, 97%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Custom Cannabis Brand Styles */
+.parallax-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.glass-effect {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 254, 247, 0.9);
+}
+
+.leaf-float {
+  animation: float 8s ease-in-out infinite;
+  opacity: 0.1;
+}
+
+.vapor-effect {
+  position: absolute;
+  width: 3px;
+  height: 100px;
+  background: linear-gradient(to top, rgba(212, 175, 55, 0.3), transparent);
+  border-radius: 50%;
+  animation: vapor 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes vapor {
+  0% { transform: translateY(0) scale(1); opacity: 0.7; }
+  50% { transform: translateY(-50px) scale(1.2); opacity: 0.3; }
+  100% { transform: translateY(-100px) scale(1.5); opacity: 0; }
+}
+
+/* Cannabis brand colors as Tailwind utilities */
+.text-forest { color: hsl(144, 50%, 22%); }
+.text-sage { color: hsl(160, 34%, 42%); }
+.text-gold { color: hsl(45, 77%, 52%); }
+.text-ivory { color: hsl(60, 25%, 97%); }
+.text-charcoal { color: hsl(213, 27%, 25%); }
+
+.bg-forest { background-color: hsl(144, 50%, 22%); }
+.bg-sage { background-color: hsl(160, 34%, 42%); }
+.bg-gold { background-color: hsl(45, 77%, 52%); }
+.bg-ivory { background-color: hsl(60, 25%, 97%); }
+.bg-charcoal { background-color: hsl(213, 27%, 25%); }
+
+.border-forest { border-color: hsl(144, 50%, 22%); }
+.border-sage { border-color: hsl(160, 34%, 42%); }
+.border-gold { border-color: hsl(45, 77%, 52%); }
+
+.from-forest { --tw-gradient-from: hsl(144, 50%, 22%); }
+.to-sage { --tw-gradient-to: hsl(160, 34%, 42%); }
+.from-sage { --tw-gradient-from: hsl(160, 34%, 42%); }
+.to-forest { --tw-gradient-to: hsl(144, 50%, 22%); }
+.from-gold { --tw-gradient-from: hsl(45, 77%, 52%); }
+.to-gold { --tw-gradient-to: hsl(45, 77%, 52%); }
