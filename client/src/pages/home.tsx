@@ -5,6 +5,8 @@ import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { CannabisLeaf, SmokeEffect } from "@/components/CannabisLeaf";
 import { PremiumBadge, QualityBadge } from "@/components/PremiumBadge";
+import { AIGeneratedHeroImage, AIEnhancedProductImage } from "@/components/AIGeneratedHero";
+import { AIParticleSystem, EnhancedSmokeEffect } from "@/components/AIParticleSystem";
 import { 
   Leaf, 
   Menu, 
@@ -109,19 +111,14 @@ function Navigation() {
 function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div 
-        className="absolute inset-0 parallax-bg"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1609902726285-00668009f042?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080')"
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-forest/80 via-forest/60 to-transparent"></div>
-      </div>
+      {/* AI Generated Hero Background */}
+      <AIGeneratedHeroImage />
       
-      {/* Vapor effects */}
-      <div className="absolute top-20 left-10 vapor-effect" style={{ animationDelay: '0s' }}></div>
-      <div className="absolute top-32 left-20 vapor-effect" style={{ animationDelay: '1s' }}></div>
-      <div className="absolute top-24 left-16 vapor-effect" style={{ animationDelay: '2s' }}></div>
+      {/* AI Particle System */}
+      <AIParticleSystem />
+      
+      {/* Enhanced Smoke Effects */}
+      <EnhancedSmokeEffect />
       
       {/* Floating cannabis leaves */}
       <div className="absolute top-1/4 right-1/4">
@@ -194,7 +191,7 @@ function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <AnimatedSection variants={slideInLeft}>
-            <img 
+            <AIEnhancedProductImage 
               src="https://images.unsplash.com/photo-1605289982774-9a6fef564df8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
               alt="Premium cannabis cultivation facility with mature plants" 
               className="rounded-2xl shadow-2xl w-full h-auto hover-lift" 
@@ -268,10 +265,10 @@ function ProductCard({ product, delay }: { product: any; delay: number }) {
       className="hover-lift"
     >
       <div className="bg-ivory rounded-2xl shadow-lg overflow-hidden border border-sage/10">
-        <img 
+        <AIEnhancedProductImage 
           src={product.image} 
           alt={product.name} 
-          className="w-full h-64 object-cover" 
+          className="w-full h-64" 
         />
         
         <div className="p-6">
