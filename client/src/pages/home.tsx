@@ -3,6 +3,8 @@ import { useRef, useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
+import { CannabisLeaf, SmokeEffect } from "@/components/CannabisLeaf";
+import { PremiumBadge, QualityBadge } from "@/components/PremiumBadge";
 import { 
   Leaf, 
   Menu, 
@@ -81,7 +83,7 @@ function Navigation() {
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-gradient-to-br from-forest to-sage rounded-lg flex items-center justify-center">
-              <Leaf className="w-6 h-6 text-ivory" />
+              <CannabisLeaf className="w-6 h-6 text-ivory" animate={false} />
             </div>
             <span className="text-2xl font-bold text-forest">Chronic Guru</span>
           </div>
@@ -110,7 +112,7 @@ function HeroSection() {
       <div 
         className="absolute inset-0 parallax-bg"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1536431311719-398b6704d4cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080')"
+          backgroundImage: "url('https://images.unsplash.com/photo-1609902726285-00668009f042?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080')"
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-forest/80 via-forest/60 to-transparent"></div>
@@ -122,12 +124,19 @@ function HeroSection() {
       <div className="absolute top-24 left-16 vapor-effect" style={{ animationDelay: '2s' }}></div>
       
       {/* Floating cannabis leaves */}
-      <div className="absolute top-1/4 right-1/4 leaf-float">
-        <Leaf className="w-16 h-16 text-sage" />
+      <div className="absolute top-1/4 right-1/4">
+        <CannabisLeaf className="w-16 h-16 text-sage/30" />
       </div>
-      <div className="absolute top-3/4 left-1/4 leaf-float" style={{ animationDelay: '-2s' }}>
-        <Leaf className="w-12 h-12 text-sage transform rotate-45" />
+      <div className="absolute top-3/4 left-1/4">
+        <CannabisLeaf className="w-12 h-12 text-sage/40" />
       </div>
+      <div className="absolute top-1/2 right-1/3">
+        <CannabisLeaf className="w-8 h-8 text-gold/20" />
+      </div>
+      
+      {/* Smoke effects */}
+      <SmokeEffect className="absolute top-40 left-20" />
+      <SmokeEffect className="absolute top-60 right-32" />
       
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         <AnimatedSection>
@@ -136,9 +145,15 @@ function HeroSection() {
             Delivered to Your Door
           </h1>
           
-          <p className="text-xl md:text-2xl text-ivory/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-ivory/90 mb-6 max-w-3xl mx-auto leading-relaxed">
             Organic. Lab-Tested. Farm-Direct. <span className="text-gold font-semibold">No Medical Card Needed.</span>
           </p>
+          
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
+            <PremiumBadge text="Veteran Owned" />
+            <PremiumBadge text="Lab Tested" />
+            <PremiumBadge text="Federally Legal" />
+          </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <motion.button 
@@ -180,8 +195,8 @@ function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <AnimatedSection variants={slideInLeft}>
             <img 
-              src="https://images.unsplash.com/photo-1616671276441-2f2c277b8bf6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
-              alt="Veteran farmer inspecting cannabis plants" 
+              src="https://images.unsplash.com/photo-1605289982774-9a6fef564df8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+              alt="Premium cannabis cultivation facility with mature plants" 
               className="rounded-2xl shadow-2xl w-full h-auto hover-lift" 
             />
           </AnimatedSection>
@@ -203,27 +218,33 @@ function AboutSection() {
                 <p>Every product is carefully crafted using sustainable farming practices and undergoes rigorous third-party lab testing to ensure purity, potency, and peace of mind.</p>
               </div>
               
-              <div className="flex flex-wrap gap-4">
-                <div className="flex items-center space-x-2 bg-forest/5 px-4 py-2 rounded-full">
-                  <ShieldCheck className="w-5 h-5 text-gold" />
-                  <span className="font-medium">Lab Tested</span>
-                </div>
-                <div className="flex items-center space-x-2 bg-forest/5 px-4 py-2 rounded-full">
-                  <Leaf className="w-5 h-5 text-gold" />
-                  <span className="font-medium">Organic</span>
-                </div>
-                <div className="flex items-center space-x-2 bg-forest/5 px-4 py-2 rounded-full">
-                  <Truck className="w-5 h-5 text-gold" />
-                  <span className="font-medium">Ships Nationwide</span>
-                </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <QualityBadge 
+                  icon={ShieldCheck}
+                  text="Lab Tested"
+                  subtext="Third-party verified"
+                />
+                <QualityBadge 
+                  icon={CannabisLeaf}
+                  text="Organic"
+                  subtext="No pesticides"
+                />
+                <QualityBadge 
+                  icon={Truck}
+                  text="Ships Nationwide"
+                  subtext="Fast delivery"
+                />
               </div>
             </div>
           </AnimatedSection>
         </div>
       </div>
       
-      <div className="absolute top-20 right-10 leaf-float opacity-5">
-        <Leaf className="w-24 h-24 text-sage" />
+      <div className="absolute top-20 right-10">
+        <CannabisLeaf className="w-24 h-24 text-sage/10" />
+      </div>
+      <div className="absolute bottom-20 left-10">
+        <CannabisLeaf className="w-20 h-20 text-forest/10" />
       </div>
     </section>
   );
@@ -314,7 +335,7 @@ function ProductCarousel() {
       price: 45,
       thca: 24.5,
       terpenes: 2.8,
-      image: "https://images.unsplash.com/photo-1606923829579-0cb981a83e2e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
+      image: "https://images.unsplash.com/photo-1611213618620-6814ce2e7316?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
     },
     {
       name: "Midnight Express",
@@ -323,7 +344,7 @@ function ProductCarousel() {
       price: 38,
       thca: 26.2,
       terpenes: 3.1,
-      image: "https://images.unsplash.com/photo-1628155930542-3c7eee1e3e82?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
+      image: "https://images.unsplash.com/photo-1597652507203-3107a98bb78d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
     },
     {
       name: "Golden Balance",
@@ -332,7 +353,7 @@ function ProductCarousel() {
       price: 42,
       thca: 23.8,
       terpenes: 2.9,
-      image: "https://images.unsplash.com/photo-1582736171755-5d32d8b3fa92?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
+      image: "https://images.unsplash.com/photo-1606923829579-0cb981a83e2e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
     }
   ];
   
@@ -692,7 +713,7 @@ function Footer() {
           <div className="space-y-6">
             <div className="flex items-center space-x-2">
               <div className="w-10 h-10 bg-gradient-to-br from-gold to-sage rounded-lg flex items-center justify-center">
-                <Leaf className="w-6 h-6 text-forest" />
+                <CannabisLeaf className="w-6 h-6 text-forest" animate={false} />
               </div>
               <span className="text-2xl font-bold">Chronic Guru</span>
             </div>
@@ -769,7 +790,7 @@ function Footer() {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-ivory">
+    <div className="min-h-screen bg-ivory premium-pattern">
       <Navigation />
       <HeroSection />
       <AboutSection />

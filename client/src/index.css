@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -66,14 +68,19 @@
   }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
 /* Custom Cannabis Brand Styles */
 .parallax-bg {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.premium-pattern {
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(144, 238, 144, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(46, 125, 50, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(212, 175, 55, 0.03) 0%, transparent 50%);
 }
 
 .hover-lift {
