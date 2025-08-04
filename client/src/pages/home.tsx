@@ -64,19 +64,18 @@ function HeroSection() {
             </h1>
             
             <p className="text-xl md:text-2xl text-gray mb-8">
-              Explore a Lifestyle That Grows With You
+              Discreet, Safe, and Simple
             </p>
             
             <div className="space-y-6 mb-8">
               <p className="text-lg text-gray leading-relaxed">
-                We get it — you're after something a little more... <span className="text-forest font-semibold">elevated</span>.
+                We operate with care — from communication to shipping.
               </p>
               <p className="text-lg text-gray leading-relaxed">
-                No worries — we've built a space just for people like you.
+                Start small, build trust, and discover what makes us different. 💬📦
               </p>
-              <p className="text-lg text-gray leading-relaxed">
-                We offer a discreet, secure way to explore botanically inspired goods — and yes,
-                we handle safe, private delivery right to your doorstep. 📦
+              <p className="text-lg text-ivory italic border-l-4 border-forest pl-4">
+                "New here? Try a small order first. Most of our community did the same — and stayed."
               </p>
             </div>
 
@@ -84,7 +83,7 @@ function HeroSection() {
               className="bg-forest text-charcoal px-8 py-4 rounded-full font-bold text-lg hover:bg-forest/90 transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => window.open('https://t.me/yourusername', '_blank')}
+              onClick={() => window.open('https://t.me/UncleKushbyInc', '_blank')}
             >
               Join Us on Telegram
             </motion.button>
@@ -127,51 +126,127 @@ function HeroSection() {
   );
 }
 
-function InfoCards() {
-  const cards = [
+function LegitimacySignals() {
+  const signals = [
     {
-      icon: "🔍",
-      title: "Curious?",
-      description: "What we show here is just the surface. For the real deal — the good stuff — you'll need to be on the inside.",
+      stat: "1,000+",
+      label: "Happy Clients",
+      description: "Active community with trusted members"
+    },
+    {
+      stat: "98%",
+      label: "Re-order Rate",
+      description: "In the last 30 days"
+    },
+    {
+      stat: "First-Time",
+      label: "Buyers Welcome",
+      description: "We keep things simple"
+    }
+  ];
+
+  return (
+    <section className="py-16 bg-charcoal">
+      <div className="max-w-6xl mx-auto px-6">
+        <AnimatedSection className="text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-ivory mb-4">
+            Subtle Legitimacy Signals
+          </h2>
+        </AnimatedSection>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {signals.map((signal, index) => (
+            <AnimatedSection key={index} delay={index * 0.1}>
+              <motion.div 
+                className="bg-dark border border-gray/30 rounded-xl p-6 text-center hover:border-forest/50 transition-colors"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="text-2xl font-bold text-forest mb-2">{signal.stat}</div>
+                <h3 className="text-lg font-semibold text-ivory mb-2">{signal.label}</h3>
+                <p className="text-sm text-gray">{signal.description}</p>
+              </motion.div>
+            </AnimatedSection>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function WhatWeOffer() {
+  const features = [
+    {
+      icon: "🌱",
+      title: "Pure Quality",
+      description: "Ethically sourced, no shortcuts.",
       delay: 0
     },
     {
-      icon: "🌱",
-      title: "Premium Quality",
-      description: "Botanically inspired goods sourced with care. Discreet packaging, secure delivery, elevated experience.",
+      icon: "📦",
+      title: "Private Shipping",
+      description: "Discreet packaging, no labels.",
+      delay: 0.1
+    },
+    {
+      icon: "🧪",
+      title: "Verified Sources",
+      description: "Everything verified before it reaches you.",
       delay: 0.2
     },
     {
-      icon: "🚪",
-      title: "Step Inside",
-      description: "Join our private channel to explore more. Updates, access, and vibes await. We'll meet you there.",
+      icon: "🔐",
+      title: "Trust-Built Process",
+      description: "We recommend starting small. You'll see.",
+      delay: 0.3
+    },
+    {
+      icon: "💳",
+      title: "Easy Access",
+      description: "No special ID or sign-up needed.",
       delay: 0.4
     }
   ];
 
   return (
-    <section className="py-20 bg-charcoal">
+    <section className="py-20 bg-gradient-to-br from-charcoal to-dark">
       <div className="max-w-6xl mx-auto px-6">
         <AnimatedSection className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-ivory mb-6">
-            Join our private channel to explore more
+            What We Offer
           </h2>
-          <p className="text-xl text-gray">
-            Updates, access, and vibes await. 🌬
+          <p className="text-lg text-gray italic">
+            (Hint Without Saying It)
           </p>
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {cards.map((card, index) => (
-            <AnimatedSection key={index} delay={card.delay}>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {features.slice(0, 3).map((feature, index) => (
+            <AnimatedSection key={index} delay={feature.delay}>
               <motion.div 
-                className="bg-dark border border-gray/30 rounded-2xl p-8 h-full hover:border-forest/50 transition-colors"
-                whileHover={{ scale: 1.02, y: -5 }}
+                className="bg-dark border border-gray/30 rounded-2xl p-6 h-full hover:border-forest/50 transition-colors"
+                whileHover={{ scale: 1.02, y: -3 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="text-4xl mb-4">{card.icon}</div>
-                <h3 className="text-xl font-bold text-forest mb-4">{card.title}</h3>
-                <p className="text-gray leading-relaxed">{card.description}</p>
+                <div className="text-3xl mb-4">{feature.icon}</div>
+                <h3 className="text-lg font-bold text-forest mb-3">{feature.title}</h3>
+                <p className="text-gray text-sm leading-relaxed">{feature.description}</p>
+              </motion.div>
+            </AnimatedSection>
+          ))}
+        </div>
+        
+        <div className="grid md:grid-cols-2 gap-6 mt-6 max-w-4xl mx-auto">
+          {features.slice(3).map((feature, index) => (
+            <AnimatedSection key={index + 3} delay={feature.delay}>
+              <motion.div 
+                className="bg-dark border border-gray/30 rounded-2xl p-6 h-full hover:border-forest/50 transition-colors"
+                whileHover={{ scale: 1.02, y: -3 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="text-3xl mb-4">{feature.icon}</div>
+                <h3 className="text-lg font-bold text-forest mb-3">{feature.title}</h3>
+                <p className="text-gray text-sm leading-relaxed">{feature.description}</p>
               </motion.div>
             </AnimatedSection>
           ))}
@@ -200,7 +275,7 @@ function CTASection() {
               className="bg-forest text-charcoal px-12 py-5 rounded-full font-bold text-xl hover:bg-forest/90 transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => window.open('https://t.me/yourusername', '_blank')}
+              onClick={() => window.open('https://t.me/UncleKushbyInc', '_blank')}
             >
               Join Us on Telegram
             </motion.button>
@@ -239,7 +314,8 @@ export default function Home() {
     <div className="min-h-screen bg-charcoal">
       <MinimalNavigation />
       <HeroSection />
-      <InfoCards />
+      <LegitimacySignals />
+      <WhatWeOffer />
       <CTASection />
       <MinimalFooter />
     </div>
