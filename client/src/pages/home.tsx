@@ -64,18 +64,18 @@ function HeroSection() {
             </h1>
             
             <p className="text-xl md:text-2xl text-gray mb-8">
-              Discreet, Safe, and Simple
+              Explore a Lifestyle That Grows With You
             </p>
             
             <div className="space-y-6 mb-8">
               <p className="text-lg text-gray leading-relaxed">
-                We operate with care — from communication to shipping.
+                We get it — you're after something a little more... <span className="text-forest font-semibold">elevated</span>.
               </p>
               <p className="text-lg text-gray leading-relaxed">
-                Start small, build trust, and discover what makes us different. 💬📦
+                No worries — we've built a space just for people like you.
               </p>
-              <p className="text-lg text-ivory italic border-l-4 border-forest pl-4">
-                "New here? Try a small order first. Most of our community did the same — and stayed."
+              <p className="text-lg text-ivory text-center italic border border-forest/30 rounded-lg p-4 bg-forest/5">
+                罗伊 ♰ ロイ
               </p>
             </div>
 
@@ -126,22 +126,49 @@ function HeroSection() {
   );
 }
 
+function AboutSection() {
+  return (
+    <section className="py-16 bg-gradient-to-b from-charcoal to-dark">
+      <div className="max-w-4xl mx-auto px-6 text-center">
+        <AnimatedSection>
+          <h2 className="text-2xl md:text-3xl font-bold text-ivory mb-6">
+            Discreet, Safe, and Simple
+          </h2>
+          
+          <div className="space-y-6 mb-8">
+            <p className="text-lg text-gray leading-relaxed">
+              We operate with care — from communication to shipping.
+            </p>
+            <p className="text-lg text-gray leading-relaxed">
+              Start small, build trust, and discover what makes us different. 💬📦
+            </p>
+          </div>
+          
+          <motion.div 
+            className="bg-dark border border-forest/30 rounded-2xl p-8 max-w-2xl mx-auto"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+          >
+            <p className="text-lg text-ivory italic leading-relaxed">
+              "New here? Try a small order first. Most of our community did the same — and stayed."
+            </p>
+          </motion.div>
+        </AnimatedSection>
+      </div>
+    </section>
+  );
+}
+
 function LegitimacySignals() {
   const signals = [
     {
-      stat: "1,000+",
-      label: "Happy Clients",
-      description: "Active community with trusted members"
+      text: "Active community with 1,000+ happy clients"
     },
     {
-      stat: "98%",
-      label: "Re-order Rate",
-      description: "In the last 30 days"
+      text: "98% re-order rate in the last 30 days"
     },
     {
-      stat: "First-Time",
-      label: "Buyers Welcome",
-      description: "We keep things simple"
+      text: "First-time buyers welcome — we keep things simple"
     }
   ];
 
@@ -152,9 +179,10 @@ function LegitimacySignals() {
           <h2 className="text-2xl md:text-3xl font-bold text-ivory mb-4">
             Subtle Legitimacy Signals
           </h2>
+          <p className="text-sm text-gray italic">(Without Risky Language)</p>
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-1 gap-6 max-w-3xl mx-auto">
           {signals.map((signal, index) => (
             <AnimatedSection key={index} delay={index * 0.1}>
               <motion.div 
@@ -162,9 +190,7 @@ function LegitimacySignals() {
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="text-2xl font-bold text-forest mb-2">{signal.stat}</div>
-                <h3 className="text-lg font-semibold text-ivory mb-2">{signal.label}</h3>
-                <p className="text-sm text-gray">{signal.description}</p>
+                <p className="text-lg text-ivory italic">"{signal.text}"</p>
               </motion.div>
             </AnimatedSection>
           ))}
@@ -314,6 +340,7 @@ export default function Home() {
     <div className="min-h-screen bg-charcoal">
       <MinimalNavigation />
       <HeroSection />
+      <AboutSection />
       <LegitimacySignals />
       <WhatWeOffer />
       <CTASection />
