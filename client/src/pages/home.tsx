@@ -69,13 +69,13 @@ function HeroSection() {
             
             <div className="space-y-6 mb-8">
               <p className="text-lg text-gray leading-relaxed">
-                We get it — you're after something a little more... <span className="text-forest font-semibold">elevated</span>.
+                You're looking for something a little more <span className="text-forest font-semibold">elevated</span> — we get it.
               </p>
               <p className="text-lg text-gray leading-relaxed">
-                No worries — we've built a space just for people like you.
+                That's why we've created a space just for people like you.
               </p>
-              <p className="text-lg text-ivory text-center italic border border-forest/30 rounded-lg p-4 bg-forest/5">
-                罗伊 ♰ ロイ
+              <p className="text-lg text-gray leading-relaxed">
+                Here, you can explore botanically inspired goods in a safe, discreet, and secure way — with private delivery right to your doorstep. 📦
               </p>
             </div>
 
@@ -126,23 +126,65 @@ function HeroSection() {
   );
 }
 
-function AboutSection() {
+function CuriousSection() {
   return (
     <section className="py-16 bg-gradient-to-b from-charcoal to-dark">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <AnimatedSection>
-          <h2 className="text-2xl md:text-3xl font-bold text-ivory mb-6">
-            Discreet, Safe, and Simple
+          <h2 className="text-3xl md:text-4xl font-bold text-ivory mb-6">
+            🔍 A Little Curious?
           </h2>
           
           <div className="space-y-6 mb-8">
             <p className="text-lg text-gray leading-relaxed">
-              We operate with care — from communication to shipping.
+              What you see here is just the surface.
             </p>
             <p className="text-lg text-gray leading-relaxed">
-              Start small, build trust, and discover what makes us different. 💬📦
+              The real experience — the good stuff — is waiting inside.
+            </p>
+            <p className="text-lg text-gray leading-relaxed">
+              Join our private channel for full access, real-time updates, and the kind of vibe you've been looking for. 🌬
             </p>
           </div>
+          
+          <motion.div 
+            className="bg-dark border border-forest/30 rounded-2xl p-8 max-w-2xl mx-auto mb-8"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+          >
+            <h3 className="text-2xl font-bold text-ivory mb-4">🚪 Step Inside</h3>
+            <p className="text-lg text-gray mb-6">
+              Click below to connect —<br />
+              we'll meet you there.
+            </p>
+            
+            <motion.button
+              className="bg-forest text-charcoal px-8 py-4 rounded-full font-bold text-lg hover:bg-forest/90 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => window.open('https://t.me/UncleKushbyInc', '_blank')}
+            >
+              👉 Join Us on Telegram — Uncle Kushby Inc ロイ ♰
+            </motion.button>
+          </motion.div>
+        </AnimatedSection>
+      </div>
+    </section>
+  );
+}
+
+function AboutSection() {
+  return (
+    <section className="py-16 bg-charcoal">
+      <div className="max-w-4xl mx-auto px-6 text-center">
+        <AnimatedSection>
+          <h2 className="text-2xl md:text-3xl font-bold text-ivory mb-6">
+            Discreet. Safe. Simple.
+          </h2>
+          
+          <p className="text-lg text-gray leading-relaxed mb-8">
+            We move with care — from our words to your doorstep.
+          </p>
           
           <motion.div 
             className="bg-dark border border-forest/30 rounded-2xl p-8 max-w-2xl mx-auto"
@@ -150,7 +192,7 @@ function AboutSection() {
             transition={{ duration: 0.3 }}
           >
             <p className="text-lg text-ivory italic leading-relaxed">
-              "New here? Try a small order first. Most of our community did the same — and stayed."
+              "New here? Try a small order. Most of our community did the same — and stayed."
             </p>
           </motion.div>
         </AnimatedSection>
@@ -161,36 +203,33 @@ function AboutSection() {
 
 function LegitimacySignals() {
   const signals = [
-    {
-      text: "Active community with 1,000+ happy clients"
-    },
-    {
-      text: "98% re-order rate in the last 30 days"
-    },
-    {
-      text: "First-time buyers welcome — we keep things simple"
-    }
+    "1,000+ happy clients",
+    "98% reorder rate (last 30 days)",
+    "First-timers welcome — we keep it simple"
   ];
 
   return (
-    <section className="py-16 bg-charcoal">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="py-16 bg-gradient-to-b from-dark to-charcoal">
+      <div className="max-w-4xl mx-auto px-6">
         <AnimatedSection className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-ivory mb-4">
-            Subtle Legitimacy Signals
+            Real Talk
           </h2>
-          <p className="text-sm text-gray italic">(Without Risky Language)</p>
+          <p className="text-sm text-gray italic">(Without Saying Too Much)</p>
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-1 gap-6 max-w-3xl mx-auto">
+        <div className="grid md:grid-cols-1 gap-4 max-w-2xl mx-auto">
           {signals.map((signal, index) => (
             <AnimatedSection key={index} delay={index * 0.1}>
               <motion.div 
-                className="bg-dark border border-gray/30 rounded-xl p-6 text-center hover:border-forest/50 transition-colors"
+                className="bg-charcoal border border-forest/30 rounded-xl p-4 text-left hover:border-forest/60 transition-colors"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                <p className="text-lg text-ivory italic">"{signal.text}"</p>
+                <p className="text-lg text-ivory flex items-center">
+                  <span className="text-forest mr-3">✅</span>
+                  {signal}
+                </p>
               </motion.div>
             </AnimatedSection>
           ))}
@@ -205,31 +244,31 @@ function WhatWeOffer() {
     {
       icon: "🌱",
       title: "Pure Quality",
-      description: "Ethically sourced, no shortcuts.",
+      description: "Everything's vetted before it reaches you.",
       delay: 0
     },
     {
       icon: "📦",
-      title: "Private Shipping",
-      description: "Discreet packaging, no labels.",
+      title: "Private, Trackable Shipping",
+      description: "No flashy packaging, no nonsense — just the real deal.",
       delay: 0.1
     },
     {
       icon: "🧪",
-      title: "Verified Sources",
-      description: "Everything verified before it reaches you.",
+      title: "Verified, Ethically Sourced Goods",
+      description: "Built on trust and quality standards.",
       delay: 0.2
     },
     {
       icon: "🔐",
-      title: "Trust-Built Process",
-      description: "We recommend starting small. You'll see.",
+      title: "Built on Trust",
+      description: "Discrete operations with proven results.",
       delay: 0.3
     },
     {
       icon: "💳",
-      title: "Easy Access",
-      description: "No special ID or sign-up needed.",
+      title: "No ID, No Signup, Just Access",
+      description: "Simple process, immediate connection.",
       delay: 0.4
     }
   ];
@@ -241,9 +280,6 @@ function WhatWeOffer() {
           <h2 className="text-3xl md:text-4xl font-bold text-ivory mb-6">
             What We Offer
           </h2>
-          <p className="text-lg text-gray italic">
-            (Hint Without Saying It)
-          </p>
         </AnimatedSection>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -340,10 +376,10 @@ export default function Home() {
     <div className="min-h-screen bg-charcoal">
       <MinimalNavigation />
       <HeroSection />
+      <CuriousSection />
       <AboutSection />
       <LegitimacySignals />
       <WhatWeOffer />
-      <CTASection />
       <MinimalFooter />
     </div>
   );
