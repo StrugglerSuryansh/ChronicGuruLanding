@@ -785,18 +785,145 @@ function Footer() {
   );
 }
 
+function MinimalNavigation() {
+  return (
+    <nav className="fixed w-full z-50 bg-charcoal/80 backdrop-blur-md border-b border-gray/20">
+      <div className="max-w-6xl mx-auto px-6 py-4">
+        <div className="flex justify-between items-center">
+          <div className="flex items-center space-x-3">
+            <div className="w-8 h-8 bg-forest rounded-lg flex items-center justify-center">
+              <CannabisLeaf className="w-5 h-5 text-charcoal" animate={false} />
+            </div>
+            <span className="text-xl font-bold text-ivory">Green Side</span>
+          </div>
+          
+          <motion.button 
+            className="bg-forest text-charcoal px-6 py-2 rounded-full font-semibold hover:bg-forest/80 transition-colors"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Join Us
+          </motion.button>
+        </div>
+      </div>
+    </nav>
+  );
+}
+
+function MinimalHero() {
+  return (
+    <section className="min-h-screen flex items-center justify-center bg-charcoal relative overflow-hidden">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <AIParticleSystem />
+      </div>
+      
+      <div className="max-w-4xl mx-auto text-center px-6 relative z-10">
+        <AnimatedSection>
+          <h1 className="text-5xl md:text-7xl font-bold text-ivory mb-8 leading-tight">
+            Welcome to the <span className="text-forest">Green Side</span>
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-gray mb-12 max-w-2xl mx-auto">
+            Explore a Lifestyle That Grows With You
+          </p>
+          
+          <div className="space-y-8 mb-12">
+            <p className="text-lg text-gray leading-relaxed">
+              We get it — you're after something a little more... <span className="text-forest font-semibold">elevated</span>.
+            </p>
+            <p className="text-lg text-gray leading-relaxed">
+              No worries — we've built a space just for people like you.
+            </p>
+            <p className="text-lg text-gray leading-relaxed">
+              We offer a discreet, secure way to explore botanically inspired goods — and yes,
+              we handle safe, private delivery right to your doorstep. 📦
+            </p>
+          </div>
+          
+          <motion.div 
+            className="bg-dark border border-gray/30 rounded-2xl p-8 mb-12"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+          >
+            <h3 className="text-2xl font-bold text-forest mb-4">🔍 Curious?</h3>
+            <p className="text-gray mb-4">
+              What we show here is just the surface.
+            </p>
+            <p className="text-gray">
+              For the real deal — the good stuff — you'll need to be on the inside.
+            </p>
+          </motion.div>
+          
+          <div className="space-y-6 mb-12">
+            <p className="text-lg text-gray">
+              Join our private channel to explore more. Updates, access, and vibes await. 🌬
+            </p>
+          </div>
+          
+          <motion.div 
+            className="bg-dark border border-gray/30 rounded-2xl p-8 mb-12"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+          >
+            <h3 className="text-2xl font-bold text-forest mb-4">🚪 Step Inside</h3>
+            <p className="text-gray mb-6">
+              Click below to connect.<br />
+              We'll meet you there.
+            </p>
+            
+            <motion.button
+              className="bg-forest text-charcoal px-8 py-4 rounded-full font-bold text-lg hover:bg-forest/90 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => window.open('https://t.me/yourusername', '_blank')}
+            >
+              Join Us on Telegram
+            </motion.button>
+          </motion.div>
+          
+          {/* Subtle floating elements */}
+          <div className="absolute top-20 right-20 opacity-10">
+            <CannabisLeaf className="w-16 h-16 text-forest" />
+          </div>
+          <div className="absolute bottom-20 left-20 opacity-10">
+            <CannabisLeaf className="w-12 h-12 text-sage" />
+          </div>
+        </AnimatedSection>
+      </div>
+    </section>
+  );
+}
+
+function MinimalFooter() {
+  return (
+    <footer className="bg-charcoal border-t border-gray/20 py-12">
+      <div className="max-w-6xl mx-auto px-6 text-center">
+        <div className="flex items-center justify-center space-x-3 mb-6">
+          <div className="w-8 h-8 bg-forest rounded-lg flex items-center justify-center">
+            <CannabisLeaf className="w-5 h-5 text-charcoal" animate={false} />
+          </div>
+          <span className="text-xl font-bold text-ivory">Green Side</span>
+        </div>
+        
+        <p className="text-gray text-sm mb-4">
+          Discreet. Secure. Elevated.
+        </p>
+        
+        <p className="text-gray/60 text-xs">
+          Must be 21+ to access. Keep out of reach of children and pets.
+        </p>
+      </div>
+    </footer>
+  );
+}
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-ivory premium-pattern">
-      <Navigation />
-      <HeroSection />
-      <AboutSection />
-      <ProductCarousel />
-      <WhyChooseUs />
-      <TestimonialsSection />
-      <EducationCTA />
-      <NewsletterSignup />
-      <Footer />
+    <div className="min-h-screen bg-charcoal">
+      <MinimalNavigation />
+      <MinimalHero />
+      <MinimalFooter />
     </div>
   );
 }
