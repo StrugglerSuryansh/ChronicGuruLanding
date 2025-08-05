@@ -33,14 +33,17 @@ function MinimalNavigation() {
             </div>
             <span className="text-xl font-bold text-ivory">Green Side</span>
           </div>
-          
-          <motion.button 
-            className="bg-forest text-charcoal px-6 py-2 rounded-full font-semibold hover:bg-forest/80 transition-colors"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Join Us
-          </motion.button>
+
+          <a href="https://t.me/UncleKushbyInc" target="_blank" rel="noopener noreferrer">
+            <motion.button
+              className="bg-forest text-charcoal px-6 py-2 rounded-full font-semibold hover:bg-forest/80 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Join Us
+            </motion.button>
+          </a>
+
         </div>
       </div>
     </nav>
@@ -54,7 +57,7 @@ function HeroSection() {
       <div className="absolute inset-0 opacity-5">
         <AIParticleSystem />
       </div>
-      
+
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Main content */}
@@ -62,11 +65,11 @@ function HeroSection() {
             <h1 className="text-4xl md:text-6xl font-bold text-ivory mb-6 leading-tight">
               Welcome to the <span className="text-forest">Green Side</span>
             </h1>
-            
+
             <p className="text-xl md:text-2xl text-gray mb-8">
               Explore a Lifestyle That Grows With You
             </p>
-            
+
             <div className="space-y-6 mb-8">
               <p className="text-lg text-gray leading-relaxed">
                 You're looking for something a little more <span className="text-forest font-semibold">elevated</span> — we get it.
@@ -103,21 +106,21 @@ function HeroSection() {
                   </defs>
                   <g transform="translate(200,200)">
                     {/* Large cannabis leaf */}
-                    <path d="M0,-150 C-30,-120 -60,-90 -80,-50 C-90,-30 -85,0 -70,20 C-50,40 -20,50 0,45 C20,50 50,40 70,20 C85,0 90,-30 80,-50 C60,-90 30,-120 0,-150 Z" fill="url(#leafGradient)" opacity="0.8"/>
+                    <path d="M0,-150 C-30,-120 -60,-90 -80,-50 C-90,-30 -85,0 -70,20 C-50,40 -20,50 0,45 C20,50 50,40 70,20 C85,0 90,-30 80,-50 C60,-90 30,-120 0,-150 Z" fill="url(#leafGradient)" opacity="0.8" />
                     {/* Smaller leaflets */}
-                    <path d="M-40,-100 C-55,-85 -65,-65 -60,-45 C-55,-25 -35,-15 -15,-20 C5,-15 15,-35 10,-55 C5,-75 -25,-95 -40,-100 Z" fill="url(#leafGradient)" opacity="0.6"/>
-                    <path d="M40,-100 C55,-85 65,-65 60,-45 C55,-25 35,-15 15,-20 C-5,-15 -15,-35 -10,-55 C-5,-75 25,-95 40,-100 Z" fill="url(#leafGradient)" opacity="0.6"/>
-                    <path d="M-70,-70 C-80,-55 -85,-35 -75,-20 C-65,-5 -45,0 -30,-5 C-15,0 -10,-20 -15,-35 C-20,-50 -55,-65 -70,-70 Z" fill="url(#leafGradient)" opacity="0.4"/>
-                    <path d="M70,-70 C80,-55 85,-35 75,-20 C65,-5 45,0 30,-5 C15,0 10,-20 15,-35 C20,-50 55,-65 70,-70 Z" fill="url(#leafGradient)" opacity="0.4"/>
+                    <path d="M-40,-100 C-55,-85 -65,-65 -60,-45 C-55,-25 -35,-15 -15,-20 C5,-15 15,-35 10,-55 C5,-75 -25,-95 -40,-100 Z" fill="url(#leafGradient)" opacity="0.6" />
+                    <path d="M40,-100 C55,-85 65,-65 60,-45 C55,-25 35,-15 15,-20 C-5,-15 -15,-35 -10,-55 C-5,-75 25,-95 40,-100 Z" fill="url(#leafGradient)" opacity="0.6" />
+                    <path d="M-70,-70 C-80,-55 -85,-35 -75,-20 C-65,-5 -45,0 -30,-5 C-15,0 -10,-20 -15,-35 C-20,-50 -55,-65 -70,-70 Z" fill="url(#leafGradient)" opacity="0.4" />
+                    <path d="M70,-70 C80,-55 85,-35 75,-20 C65,-5 45,0 30,-5 C15,0 10,-20 15,-35 C20,-50 55,-65 70,-70 Z" fill="url(#leafGradient)" opacity="0.4" />
                   </g>
                 </svg>
               </div>
-              
+
               {/* Floating particles */}
               <div className="absolute top-10 left-10 w-2 h-2 bg-forest rounded-full animate-pulse"></div>
-              <div className="absolute top-20 right-16 w-3 h-3 bg-sage rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-              <div className="absolute bottom-16 left-20 w-2 h-2 bg-forest rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
-              <div className="absolute bottom-10 right-10 w-3 h-3 bg-sage rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+              <div className="absolute top-20 right-16 w-3 h-3 bg-sage rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+              <div className="absolute bottom-16 left-20 w-2 h-2 bg-forest rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
+              <div className="absolute bottom-10 right-10 w-3 h-3 bg-sage rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
             </div>
           </AnimatedSection>
         </div>
@@ -134,7 +137,7 @@ function CuriousSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-ivory mb-6">
             🔍 A Little Curious?
           </h2>
-          
+
           <div className="space-y-6 mb-8">
             <p className="text-lg text-gray leading-relaxed">
               What you see here is just the surface.
@@ -146,8 +149,8 @@ function CuriousSection() {
               Join our private channel for full access, real-time updates, and the kind of vibe you've been looking for. 🌬
             </p>
           </div>
-          
-          <motion.div 
+
+          <motion.div
             className="bg-dark border border-forest/30 rounded-2xl p-8 max-w-2xl mx-auto mb-8"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
@@ -157,7 +160,7 @@ function CuriousSection() {
               Click below to connect —<br />
               we'll meet you there.
             </p>
-            
+
             <motion.button
               className="bg-forest text-charcoal px-8 py-4 rounded-full font-bold text-lg hover:bg-forest/90 transition-colors"
               whileHover={{ scale: 1.05 }}
@@ -181,12 +184,12 @@ function AboutSection() {
           <h2 className="text-2xl md:text-3xl font-bold text-ivory mb-6">
             Discreet. Safe. Simple.
           </h2>
-          
+
           <p className="text-lg text-gray leading-relaxed mb-8">
             We move with care — from our words to your doorstep.
           </p>
-          
-          <motion.div 
+
+          <motion.div
             className="bg-dark border border-forest/30 rounded-2xl p-8 max-w-2xl mx-auto"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
@@ -215,13 +218,13 @@ function LegitimacySignals() {
           <h2 className="text-2xl md:text-3xl font-bold text-ivory mb-4">
             Real Talk
           </h2>
-          <p className="text-sm text-gray italic">(Without Saying Too Much)</p>
+
         </AnimatedSection>
 
         <div className="grid md:grid-cols-1 gap-4 max-w-2xl mx-auto">
           {signals.map((signal, index) => (
             <AnimatedSection key={index} delay={index * 0.1}>
-              <motion.div 
+              <motion.div
                 className="bg-charcoal border border-forest/30 rounded-xl p-4 text-left hover:border-forest/60 transition-colors"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
@@ -285,7 +288,7 @@ function WhatWeOffer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.slice(0, 3).map((feature, index) => (
             <AnimatedSection key={index} delay={feature.delay}>
-              <motion.div 
+              <motion.div
                 className="bg-dark border border-gray/30 rounded-2xl p-6 h-full hover:border-forest/50 transition-colors"
                 whileHover={{ scale: 1.02, y: -3 }}
                 transition={{ duration: 0.3 }}
@@ -297,11 +300,11 @@ function WhatWeOffer() {
             </AnimatedSection>
           ))}
         </div>
-        
+
         <div className="grid md:grid-cols-2 gap-6 mt-6 max-w-4xl mx-auto">
           {features.slice(3).map((feature, index) => (
             <AnimatedSection key={index + 3} delay={feature.delay}>
-              <motion.div 
+              <motion.div
                 className="bg-dark border border-gray/30 rounded-2xl p-6 h-full hover:border-forest/50 transition-colors"
                 whileHover={{ scale: 1.02, y: -3 }}
                 transition={{ duration: 0.3 }}
@@ -332,7 +335,7 @@ function CTASection() {
               Click below to connect.<br />
               We'll meet you there.
             </p>
-            
+
             <motion.button
               className="bg-forest text-charcoal px-12 py-5 rounded-full font-bold text-xl hover:bg-forest/90 transition-colors"
               whileHover={{ scale: 1.05 }}
@@ -358,11 +361,11 @@ function MinimalFooter() {
           </div>
           <span className="text-xl font-bold text-ivory">Green Side</span>
         </div>
-        
+
         <p className="text-gray text-sm mb-4">
           Discreet. Secure. Elevated.
         </p>
-        
+
         <p className="text-gray/60 text-xs">
           Must be 21+ to access. Keep out of reach of children and pets.
         </p>
