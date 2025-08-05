@@ -1,0 +1,916 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronic Guru - Premium THCa Cannabis Delivered</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'forest': '#1B4332',
+                        'sage': '#52796F',
+                        'gold': '#D4AF37',
+                        'ivory': '#FFFEF7',
+                        'charcoal': '#2D3748'
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fadeInUp': 'fadeInUp 0.6s ease-out',
+                        'slideInLeft': 'slideInLeft 0.8s ease-out',
+                        'slideInRight': 'slideInRight 0.8s ease-out',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'bounce-gentle': 'bounce-gentle 2s infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        'bounce-gentle': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .hover-lift {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 254, 247, 0.9);
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+        .stagger-5 { transition-delay: 0.5s; }
+        
+        .leaf-float {
+            animation: float 8s ease-in-out infinite;
+            opacity: 0.1;
+        }
+        
+        .vapor-effect {
+            position: absolute;
+            width: 3px;
+            height: 100px;
+            background: linear-gradient(to top, rgba(212, 175, 55, 0.3), transparent);
+            border-radius: 50%;
+            animation: vapor 4s ease-in-out infinite;
+        }
+        
+        @keyframes vapor {
+            0% { transform: translateY(0) scale(1); opacity: 0.7; }
+            50% { transform: translateY(-50px) scale(1.2); opacity: 0.3; }
+            100% { transform: translateY(-100px) scale(1.5); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="font-poppins text-charcoal bg-ivory overflow-x-hidden">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-effect border-b border-sage/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-br from-forest to-sage rounded-lg flex items-center justify-center">
+                        <i data-lucide="leaf" class="w-6 h-6 text-ivory"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-forest">Chronic Guru</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-charcoal hover:text-forest transition-colors duration-300">About</a>
+                    <a href="#products" class="text-charcoal hover:text-forest transition-colors duration-300">Products</a>
+                    <a href="#education" class="text-charcoal hover:text-forest transition-colors duration-300">Education</a>
+                    <button class="bg-forest text-ivory px-6 py-2 rounded-full hover:bg-sage hover:scale-105 transition-all duration-300">
+                        Shop Now
+                    </button>
+                </div>
+                
+                <button class="md:hidden">
+                    <i data-lucide="menu" class="w-6 h-6 text-forest"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <!-- @COMPONENT: HeroSection -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Panoramic cannabis field with golden sunset lighting -->
+        <div class="absolute inset-0 parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1536431311719-398b6704d4cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080');">
+            <div class="absolute inset-0 bg-gradient-to-r from-forest/80 via-forest/60 to-transparent"></div>
+        </div>
+        
+        <!-- Vapor effects -->
+        <div class="absolute top-20 left-10 vapor-effect" style="animation-delay: 0s;"></div>
+        <div class="absolute top-32 left-20 vapor-effect" style="animation-delay: 1s;"></div>
+        <div class="absolute top-24 left-16 vapor-effect" style="animation-delay: 2s;"></div>
+        
+        <!-- Floating cannabis leaves -->
+        <div class="absolute top-1/4 right-1/4 leaf-float">
+            <i data-lucide="leaf" class="w-16 h-16 text-sage"></i>
+        </div>
+        <div class="absolute top-3/4 left-1/4 leaf-float" style="animation-delay: -2s;">
+            <i data-lucide="leaf" class="w-12 h-12 text-sage transform rotate-45"></i>
+        </div>
+        
+        <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+            <div class="animate-on-scroll">
+                <h1 class="text-5xl md:text-7xl font-bold text-ivory leading-tight mb-6">
+                    Premium <span class="text-gold">THCa Cannabis</span><br>
+                    Delivered to Your Door
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-ivory/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+                    Organic. Lab-Tested. Farm-Direct. <span class="text-gold font-semibold">No Medical Card Needed.</span>
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <button class="group bg-gold text-forest px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 hover:shadow-xl transition-all duration-300 min-w-[200px]">
+                        <span class="group-hover:animate-pulse-slow">Shop Now</span>
+                        <i data-lucide="arrow-right" class="w-5 h-5 ml-2 inline-block group-hover:translate-x-1 transition-transform duration-300"></i>
+                    </button>
+                    
+                    <button class="group border-2 border-ivory text-ivory px-8 py-4 rounded-full font-semibold text-lg hover:bg-ivory hover:text-forest hover:scale-105 transition-all duration-300 min-w-[200px]">
+                        Learn More
+                        <i data-lucide="play-circle" class="w-5 h-5 ml-2 inline-block group-hover:scale-110 transition-transform duration-300"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-gentle">
+            <i data-lucide="chevron-down" class="w-8 h-8 text-ivory"></i>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: HeroSection -->
+
+    <!-- About Chronic Guru Section -->
+    <!-- @COMPONENT: AboutSection -->
+    <section id="about" class="py-20 bg-ivory relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Image Side -->
+                <div class="animate-on-scroll slideInLeft">
+                    <!-- Veteran farmer inspecting cannabis plants in greenhouse -->
+                    <img src="https://pixabay.com/get/g1649a600302dd43fdf40edbf2460b3dfd454bc94fc43904b01f821dc3c2acfcd884e055c69f7756f42553fa043bec7d2f0865ac4e5e612b5e4bf8e8818a1c414_1280.jpg" alt="Veteran farmer inspecting cannabis plants" class="rounded-2xl shadow-2xl w-full h-auto hover-lift" />
+                </div>
+                
+                <!-- Content Side -->
+                <div class="animate-on-scroll slideInRight">
+                    <div class="max-w-xl">
+                        <h2 class="text-4xl md:text-5xl font-bold text-forest mb-6 leading-tight">
+                            Meet the <span class="text-gold">Chronic Guru</span>
+                        </h2>
+                        
+                        <div class="text-lg text-charcoal/80 mb-8 space-y-4">
+                            <p>Founded by military veterans with a passion for premium cannabis cultivation, Chronic Guru represents the pinnacle of artisanal THCa products.</p>
+                            
+                            <div class="bg-sage/10 p-6 rounded-xl border-l-4 border-gold">
+                                <p class="font-semibold text-forest text-xl mb-2">Our Promise:</p>
+                                <p class="text-charcoal">Veteran-owned. Florida-grown. Federally legal.</p>
+                            </div>
+                            
+                            <p>Every product is carefully crafted using sustainable farming practices and undergoes rigorous third-party lab testing to ensure purity, potency, and peace of mind.</p>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-4">
+                            <div class="flex items-center space-x-2 bg-forest/5 px-4 py-2 rounded-full">
+                                <i data-lucide="shield-check" class="w-5 h-5 text-gold"></i>
+                                <span class="font-medium">Lab Tested</span>
+                            </div>
+                            <div class="flex items-center space-x-2 bg-forest/5 px-4 py-2 rounded-full">
+                                <i data-lucide="leaf" class="w-5 h-5 text-gold"></i>
+                                <span class="font-medium">Organic</span>
+                            </div>
+                            <div class="flex items-center space-x-2 bg-forest/5 px-4 py-2 rounded-full">
+                                <i data-lucide="truck" class="w-5 h-5 text-gold"></i>
+                                <span class="font-medium">Ships Nationwide</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Floating decorative elements -->
+        <div class="absolute top-20 right-10 leaf-float opacity-5">
+            <i data-lucide="leaf" class="w-24 h-24 text-sage"></i>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: AboutSection -->
+
+    <!-- Product Carousel Section -->
+    <!-- @COMPONENT: ProductCarousel -->
+    <section id="products" class="py-20 bg-gradient-to-br from-sage/5 to-forest/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl md:text-5xl font-bold text-forest mb-6">Premium Product Collection</h2>
+                <p class="text-xl text-charcoal/70 max-w-3xl mx-auto">Discover our carefully curated selection of premium THCa products, each one crafted with precision and tested for excellence.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product Card 1 -->
+                <!-- @MAP: products.map(product => ( -->
+                <div class="animate-on-scroll stagger-1 hover-lift">
+                    <div class="bg-ivory rounded-2xl shadow-lg overflow-hidden border border-sage/10">
+                        <!-- Premium cannabis flower in glass jar with golden lighting -->
+                        <img src="https://pixabay.com/get/gfa70aa4b67694b91e18751a4e8bbd237d0c70a07a6324acdd3f14dbd2ce774423a2e1fcf0c345c9ad10ccea74b815c1b8ea8ecfc622a3ed1f2ba30a927fc1bb7_1280.jpg" alt="Premium Sativa Flower" class="w-full h-64 object-cover" />
+                        
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-bold text-forest" data-bind="product.name">Tropical Haze</h3>
+                                <span class="bg-gold/20 text-gold px-3 py-1 rounded-full text-sm font-semibold">Sativa</span>
+                            </div>
+                            
+                            <p class="text-charcoal/70 mb-4" data-bind="product.description">Energizing tropical strain with notes of citrus and pine. Perfect for daytime use and creative activities.</p>
+                            
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="text-2xl font-bold text-forest" data-bind="product.price">$45</div>
+                                <div class="text-sm text-charcoal/60">per gram</div>
+                            </div>
+                            
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-charcoal/70">THCa Content:</span>
+                                    <span class="font-semibold text-forest">24.5%</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-charcoal/70">Terpenes:</span>
+                                    <span class="font-semibold text-forest">2.8%</span>
+                                </div>
+                            </div>
+                            
+                            <button class="w-full bg-forest text-ivory py-3 rounded-xl font-semibold hover:bg-sage hover:scale-105 transition-all duration-300" data-event="click:addToCart">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 2 -->
+                <div class="animate-on-scroll stagger-2 hover-lift">
+                    <div class="bg-ivory rounded-2xl shadow-lg overflow-hidden border border-sage/10">
+                        <!-- Cannabis pre-roll joints on marble surface -->
+                        <img src="https://pixabay.com/get/g93b7fb125b82307b2fcd0a040eb1687d76ce5ab406c366044d65fbc765d18da31f489e5a7f01eab2ab3ae36325eb285378a4d56bc2fd53b54dadb7d04bad9902_1280.jpg" alt="Premium Pre-Rolls" class="w-full h-64 object-cover" />
+                        
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-bold text-forest">Midnight Express</h3>
+                                <span class="bg-sage/20 text-sage px-3 py-1 rounded-full text-sm font-semibold">Indica</span>
+                            </div>
+                            
+                            <p class="text-charcoal/70 mb-4">Relaxing evening blend with earthy undertones. Ideal for unwinding and peaceful sleep.</p>
+                            
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="text-2xl font-bold text-forest">$38</div>
+                                <div class="text-sm text-charcoal/60">per gram</div>
+                            </div>
+                            
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-charcoal/70">THCa Content:</span>
+                                    <span class="font-semibold text-forest">26.2%</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-charcoal/70">Terpenes:</span>
+                                    <span class="font-semibold text-forest">3.1%</span>
+                                </div>
+                            </div>
+                            
+                            <button class="w-full bg-forest text-ivory py-3 rounded-xl font-semibold hover:bg-sage hover:scale-105 transition-all duration-300">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Card 3 -->
+                <div class="animate-on-scroll stagger-3 hover-lift">
+                    <div class="bg-ivory rounded-2xl shadow-lg overflow-hidden border border-sage/10">
+                        <!-- Cannabis edibles - gummies in elegant packaging -->
+                        <img src="https://images.unsplash.com/photo-1628155930542-3c7eee1e3e82?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Premium Edibles" class="w-full h-64 object-cover" />
+                        
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-bold text-forest">Golden Balance</h3>
+                                <span class="bg-gold/20 text-gold px-3 py-1 rounded-full text-sm font-semibold">Hybrid</span>
+                            </div>
+                            
+                            <p class="text-charcoal/70 mb-4">Perfectly balanced hybrid offering the best of both worlds. Smooth, consistent experience.</p>
+                            
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="text-2xl font-bold text-forest">$42</div>
+                                <div class="text-sm text-charcoal/60">per gram</div>
+                            </div>
+                            
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-charcoal/70">THCa Content:</span>
+                                    <span class="font-semibold text-forest">23.8%</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-charcoal/70">Terpenes:</span>
+                                    <span class="font-semibold text-forest">2.9%</span>
+                                </div>
+                            </div>
+                            
+                            <button class="w-full bg-forest text-ivory py-3 rounded-xl font-semibold hover:bg-sage hover:scale-105 transition-all duration-300">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-gold text-forest px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 hover:shadow-xl transition-all duration-300">
+                    View All Products
+                    <i data-lucide="arrow-right" class="w-5 h-5 ml-2 inline-block"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ProductCarousel -->
+
+    <!-- Why Choose Us Section -->
+    <!-- @COMPONENT: WhyChooseUs -->
+    <section class="py-20 bg-ivory">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl md:text-5xl font-bold text-forest mb-6">Why Choose Chronic Guru?</h2>
+                <p class="text-xl text-charcoal/70 max-w-3xl mx-auto">Five pillars of excellence that set us apart in the cannabis industry.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-5 gap-8">
+                <!-- Feature 1 -->
+                <div class="animate-on-scroll stagger-1 text-center group">
+                    <div class="relative">
+                        <div class="w-20 h-20 bg-gradient-to-br from-forest to-sage rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                            <i data-lucide="leaf" class="w-10 h-10 text-ivory"></i>
+                        </div>
+                        
+                        <!-- Tooltip -->
+                        <div class="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-forest text-ivory px-3 py-2 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                            100% Organic Cultivation
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-forest mb-3">Organic</h3>
+                    <p class="text-charcoal/70">Sustainably grown without pesticides or harmful chemicals</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="animate-on-scroll stagger-2 text-center group">
+                    <div class="relative">
+                        <div class="w-20 h-20 bg-gradient-to-br from-forest to-sage rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                            <i data-lucide="shield-check" class="w-10 h-10 text-ivory"></i>
+                        </div>
+                        
+                        <div class="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-forest text-ivory px-3 py-2 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                            Third-party Lab Verified
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-forest mb-3">Lab-Tested</h3>
+                    <p class="text-charcoal/70">Rigorous testing for purity, potency, and safety</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="animate-on-scroll stagger-3 text-center group">
+                    <div class="relative">
+                        <div class="w-20 h-20 bg-gradient-to-br from-forest to-sage rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                            <i data-lucide="truck" class="w-10 h-10 text-ivory"></i>
+                        </div>
+                        
+                        <div class="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-forest text-ivory px-3 py-2 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                            Fast, Discrete Delivery
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-forest mb-3">Ships Nationwide</h3>
+                    <p class="text-charcoal/70">Fast, discrete delivery to all 50 states</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="animate-on-scroll stagger-4 text-center group">
+                    <div class="relative">
+                        <div class="w-20 h-20 bg-gradient-to-br from-forest to-sage rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                            <i data-lucide="scale" class="w-10 h-10 text-ivory"></i>
+                        </div>
+                        
+                        <div class="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-forest text-ivory px-3 py-2 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                            2018 Farm Bill Compliant
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-forest mb-3">Legal</h3>
+                    <p class="text-charcoal/70">Federally compliant THCa products</p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="animate-on-scroll stagger-5 text-center group">
+                    <div class="relative">
+                        <div class="w-20 h-20 bg-gradient-to-br from-forest to-sage rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                            <i data-lucide="user-check" class="w-10 h-10 text-ivory"></i>
+                        </div>
+                        
+                        <div class="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-forest text-ivory px-3 py-2 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                            No Medical Card Required
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-bold text-forest mb-3">No Card Required</h3>
+                    <p class="text-charcoal/70">Access premium cannabis without medical certification</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: WhyChooseUs -->
+
+    <!-- Customer Testimonials Section -->
+    <!-- @COMPONENT: TestimonialsSection -->
+    <section class="py-20 bg-gradient-to-br from-sage/10 to-forest/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-4xl md:text-5xl font-bold text-forest mb-6">What Our Customers Say</h2>
+                <p class="text-xl text-charcoal/70 max-w-3xl mx-auto">Real experiences from real customers who trust Chronic Guru for their cannabis needs.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <!-- @MAP: testimonials.map(testimonial => ( -->
+                <div class="animate-on-scroll stagger-1 hover-lift">
+                    <div class="bg-ivory rounded-2xl p-8 shadow-lg border border-sage/10 h-full">
+                        <!-- Star Rating -->
+                        <div class="flex items-center mb-6">
+                            <div class="flex space-x-1 mr-3">
+                                <i data-lucide="star" class="w-5 h-5 fill-gold text-gold"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-gold text-gold"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-gold text-gold"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-gold text-gold"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-gold text-gold"></i>
+                            </div>
+                            <span class="text-gold font-semibold">5.0</span>
+                        </div>
+                        
+                        <blockquote class="text-charcoal/80 mb-6 italic text-lg leading-relaxed" data-bind="testimonial.content">
+                            "The quality is absolutely incredible. As a medical user, I need consistency and potency, and Chronic Guru delivers every single time. Plus, their customer service is top-notch!"
+                        </blockquote>
+                        
+                        <div class="flex items-center">
+                            <!-- Customer profile photo -->
+                            <img src="https://pixabay.com/get/g19ebfc658e742fa3c2c35f6e24aa1c8502de1794f58b1b3631bcc06490946dbd0ed3d5c74d50f80fd7a340876f820db614f0678aa337969203339cb15971ecf9_1280.jpg" alt="Customer Sarah M." class="w-12 h-12 rounded-full object-cover mr-4" data-bind="testimonial.customerImage" />
+                            <div>
+                                <div class="font-semibold text-forest" data-bind="testimonial.customerName">Sarah M.</div>
+                                <div class="text-charcoal/60 text-sm" data-bind="testimonial.location">California</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="animate-on-scroll stagger-2 hover-lift">
+                    <div class="bg-ivory rounded-2xl p-8 shadow-lg border border-sage/10 h-full">
+                        <div class="flex items-center mb-6">
+                            <div class="flex space-x-1 mr-3">
+                                <i data-lucide="star" class="w-5 h-5 fill-gold text-gold"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-gold text-gold"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-gold text-gold"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-gold text-gold"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-gold text-gold"></i>
+                            </div>
+                            <span class="text-gold font-semibold">5.0</span>
+                        </div>
+                        
+                        <blockquote class="text-charcoal/80 mb-6 italic text-lg leading-relaxed">
+                            "Finally found a vendor I can trust! The lab reports give me peace of mind, and the effects are exactly what I'm looking for. Fast shipping too!"
+                        </blockquote>
+                        
+                        <div class="flex items-center">
+                            <!-- Customer profile photo -->
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150" alt="Customer Mike R." class="w-12 h-12 rounded-full object-cover mr-4" />
+                            <div>
+                                <div class="font-semibold text-forest">Mike R.</div>
+                                <div class="text-charcoal/60 text-sm">Texas</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="animate-on-scroll stagger-3 hover-lift">
+                    <div class="bg-ivory rounded-2xl p-8 shadow-lg border border-sage/10 h-full">
+                        <div class="flex items-center mb-6">
+                            <div class="flex space-x-1 mr-3">
+                                <i data-lucide="star" class="w-5 h-5 fill-gold text-gold"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-gold text-gold"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-gold text-gold"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-gold text-gold"></i>
+                                <i data-lucide="star" class="w-5 h-5 fill-gold text-gold"></i>
+                            </div>
+                            <span class="text-gold font-semibold">5.0</span>
+                        </div>
+                        
+                        <blockquote class="text-charcoal/80 mb-6 italic text-lg leading-relaxed">
+                            "As a veteran, I appreciate supporting a veteran-owned business. The quality speaks for itself, and their educational content helped me find the right products."
+                        </blockquote>
+                        
+                        <div class="flex items-center">
+                            <!-- Customer profile photo -->
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150" alt="Customer James K." class="w-12 h-12 rounded-full object-cover mr-4" />
+                            <div>
+                                <div class="font-semibold text-forest">James K.</div>
+                                <div class="text-charcoal/60 text-sm">Florida</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: TestimonialsSection -->
+
+    <!-- Education CTA Section -->
+    <!-- @COMPONENT: EducationCTA -->
+    <section id="education" class="py-20 bg-ivory">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="animate-on-scroll">
+                <div class="bg-gradient-to-br from-forest to-sage p-12 rounded-3xl shadow-2xl relative overflow-hidden">
+                    <!-- Decorative elements -->
+                    <div class="absolute top-4 right-4 leaf-float opacity-10">
+                        <i data-lucide="leaf" class="w-16 h-16 text-ivory"></i>
+                    </div>
+                    <div class="absolute bottom-4 left-4 leaf-float opacity-10" style="animation-delay: -3s;">
+                        <i data-lucide="leaf" class="w-12 h-12 text-ivory transform rotate-180"></i>
+                    </div>
+                    
+                    <div class="relative z-10">
+                        <h2 class="text-4xl md:text-5xl font-bold text-ivory mb-6">New to THCa?</h2>
+                        
+                        <p class="text-xl text-ivory/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+                            Discover the world of premium THCa cannabis with our comprehensive education center. Learn about benefits, usage, and find the perfect products for your needs.
+                        </p>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center justify-center space-x-3 text-ivory/80">
+                                <i data-lucide="book-open" class="w-5 h-5"></i>
+                                <span>Strain guides and effect profiles</span>
+                            </div>
+                            <div class="flex items-center justify-center space-x-3 text-ivory/80">
+                                <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                                <span>Cannabis 101 courses and tutorials</span>
+                            </div>
+                            <div class="flex items-center justify-center space-x-3 text-ivory/80">
+                                <i data-lucide="users" class="w-5 h-5"></i>
+                                <span>Community forums and expert advice</span>
+                            </div>
+                        </div>
+                        
+                        <button class="group bg-gold text-forest px-8 py-4 rounded-full font-semibold text-lg hover:scale-105 hover:shadow-xl transition-all duration-300 animate-bounce-gentle">
+                            <span class="mr-2">Explore Sativa University</span>
+                            <i data-lucide="arrow-right" class="w-5 h-5 inline-block group-hover:translate-x-2 transition-transform duration-300"></i>
+                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-forest group-hover:w-full transition-all duration-500"></div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: EducationCTA -->
+
+    <!-- Newsletter Signup Section -->
+    <!-- @COMPONENT: NewsletterSignup -->
+    <section class="py-20 bg-gradient-to-br from-sage/5 to-forest/5">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="animate-on-scroll text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-forest mb-6">Stay in the Know</h2>
+                <p class="text-xl text-charcoal/70 mb-8 max-w-2xl mx-auto">
+                    Get cannabis news, exclusive deals, and educational content straight to your inbox.
+                </p>
+                
+                <div class="max-w-md mx-auto">
+                    <!-- @STATE: email:string = "", isLoading:boolean = false -->
+                    <form class="space-y-4" data-event="submit:handleNewsletterSignup">
+                        <div class="relative">
+                            <input 
+                                type="email" 
+                                placeholder="Enter your email address"
+                                data-bind="email"
+                                class="w-full px-6 py-4 rounded-full border-2 border-sage/20 focus:border-forest focus:outline-none text-lg transition-all duration-300"
+                                required
+                            />
+                            <div class="absolute right-2 top-2">
+                                <button 
+                                    type="submit"
+                                    class="bg-forest text-ivory px-6 py-2 rounded-full font-semibold hover:bg-sage hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-forest focus:ring-offset-2"
+                                    data-implementation="Should show loading state and validate email"
+                                >
+                                    <span class="hidden sm:inline">Subscribe</span>
+                                    <i data-lucide="arrow-right" class="w-5 h-5 sm:hidden"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center justify-center space-x-2 text-sm text-charcoal/60">
+                            <i data-lucide="shield" class="w-4 h-4"></i>
+                            <span>We respect your privacy. Unsubscribe anytime.</span>
+                        </div>
+                    </form>
+                    
+                    <!-- Success/Error states -->
+                    <div class="mt-4 space-y-2 hidden" data-implementation="Show based on form state">
+                        <div class="text-green-600 flex items-center justify-center space-x-2">
+                            <i data-lucide="check-circle" class="w-5 h-5"></i>
+                            <span>Successfully subscribed! Check your email.</span>
+                        </div>
+                        <div class="text-red-600 flex items-center justify-center space-x-2">
+                            <i data-lucide="alert-circle" class="w-5 h-5"></i>
+                            <span>Something went wrong. Please try again.</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div class="space-y-2">
+                        <div class="text-2xl font-bold text-forest">10K+</div>
+                        <div class="text-charcoal/60">Subscribers</div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="text-2xl font-bold text-forest">Weekly</div>
+                        <div class="text-charcoal/60">Updates</div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="text-2xl font-bold text-forest">Exclusive</div>
+                        <div class="text-charcoal/60">Deals</div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="text-2xl font-bold text-forest">Expert</div>
+                        <div class="text-charcoal/60">Content</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: NewsletterSignup -->
+
+    <!-- Footer -->
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-forest text-ivory py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-10 h-10 bg-gradient-to-br from-gold to-sage rounded-lg flex items-center justify-center">
+                            <i data-lucide="leaf" class="w-6 h-6 text-forest"></i>
+                        </div>
+                        <span class="text-2xl font-bold">Chronic Guru</span>
+                    </div>
+                    
+                    <p class="text-ivory/80 leading-relaxed">
+                        Premium THCa cannabis products delivered nationwide. Veteran-owned, Florida-grown, federally legal.
+                    </p>
+                    
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-sage/20 rounded-full flex items-center justify-center hover:bg-gold hover:scale-110 transition-all duration-300">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-sage/20 rounded-full flex items-center justify-center hover:bg-gold hover:scale-110 transition-all duration-300">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-sage/20 rounded-full flex items-center justify-center hover:bg-gold hover:scale-110 transition-all duration-300">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-sage/20 rounded-full flex items-center justify-center hover:bg-gold hover:scale-110 transition-all duration-300">
+                            <i data-lucide="youtube" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="space-y-6">
+                    <h4 class="text-xl font-semibold text-gold">Quick Links</h4>
+                    <div class="space-y-3">
+                        <a href="#" class="block text-ivory/80 hover:text-gold transition-colors duration-300">About Us</a>
+                        <a href="#" class="block text-ivory/80 hover:text-gold transition-colors duration-300">Products</a>
+                        <a href="#" class="block text-ivory/80 hover:text-gold transition-colors duration-300">Lab Results</a>
+                        <a href="#" class="block text-ivory/80 hover:text-gold transition-colors duration-300">Education</a>
+                        <a href="#" class="block text-ivory/80 hover:text-gold transition-colors duration-300">Blog</a>
+                    </div>
+                </div>
+                
+                <!-- Customer Care -->
+                <div class="space-y-6">
+                    <h4 class="text-xl font-semibold text-gold">Customer Care</h4>
+                    <div class="space-y-3">
+                        <a href="#" class="block text-ivory/80 hover:text-gold transition-colors duration-300">Contact Us</a>
+                        <a href="#" class="block text-ivory/80 hover:text-gold transition-colors duration-300">Shipping Info</a>
+                        <a href="#" class="block text-ivory/80 hover:text-gold transition-colors duration-300">Returns</a>
+                        <a href="#" class="block text-ivory/80 hover:text-gold transition-colors duration-300">FAQ</a>
+                        <a href="#" class="block text-ivory/80 hover:text-gold transition-colors duration-300">Support</a>
+                    </div>
+                </div>
+                
+                <!-- Legal -->
+                <div class="space-y-6">
+                    <h4 class="text-xl font-semibold text-gold">Legal</h4>
+                    <div class="space-y-3">
+                        <a href="#" class="block text-ivory/80 hover:text-gold transition-colors duration-300">Privacy Policy</a>
+                        <a href="#" class="block text-ivory/80 hover:text-gold transition-colors duration-300">Terms of Service</a>
+                        <a href="#" class="block text-ivory/80 hover:text-gold transition-colors duration-300">Age Verification</a>
+                        <a href="#" class="block text-ivory/80 hover:text-gold transition-colors duration-300">Compliance</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-sage/20 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <div class="text-ivory/60 text-sm">
+                        © 2024 Chronic Guru. All rights reserved.
+                    </div>
+                    
+                    <div class="text-ivory/60 text-sm text-center md:text-right">
+                        <p class="mb-2">This product has not been evaluated by the FDA.</p>
+                        <p>Must be 21+ to purchase. Keep out of reach of children and pets.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Smooth scrolling for navigation links
+        (function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        })();
+        
+        // Scroll animations observer
+        (function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all elements with animate-on-scroll class
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+        })();
+        
+        // Parallax effect for hero background
+        (function() {
+            const parallaxElement = document.querySelector('.parallax-bg');
+            if (parallaxElement) {
+                window.addEventListener('scroll', () => {
+                    const scrolled = window.pageYOffset;
+                    const rate = scrolled * -0.5;
+                    parallaxElement.style.transform = `translate3d(0, ${rate}px, 0)`;
+                });
+            }
+        })();
+        
+        // Newsletter form handling
+        (function() {
+            const form = document.querySelector('form[data-event="submit:handleNewsletterSignup"]');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // TODO: Implement newsletter signup API call
+                    console.log('Newsletter signup submitted');
+                    
+                    // Simulate loading state
+                    const button = form.querySelector('button[type="submit"]');
+                    const originalText = button.innerHTML;
+                    button.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i>';
+                    button.disabled = true;
+                    
+                    // Simulate API response
+                    setTimeout(() => {
+                        button.innerHTML = '<i data-lucide="check" class="w-5 h-5"></i>';
+                        setTimeout(() => {
+                            button.innerHTML = originalText;
+                            button.disabled = false;
+                            form.reset();
+                        }, 1500);
+                    }, 2000);
+                });
+            }
+        })();
+        
+        // Product card hover effects
+        (function() {
+            document.querySelectorAll('.hover-lift').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        })();
+        
+        // Add to cart button effects
+        (function() {
+            document.querySelectorAll('button[data-event="click:addToCart"]').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // TODO: Implement add to cart functionality
+                    
+                    // Visual feedback
+                    const originalText = this.innerHTML;
+                    this.innerHTML = 'Added! <i data-lucide="check" class="w-4 h-4 inline-block ml-1"></i>';
+                    this.classList.add('bg-green-600');
+                    
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                        this.classList.remove('bg-green-600');
+                        lucide.createIcons();
+                    }, 2000);
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
